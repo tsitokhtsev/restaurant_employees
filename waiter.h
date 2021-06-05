@@ -1,8 +1,6 @@
 /* Waiter Header File */
 #pragma once
-
 #include <iostream>
-
 #include "employee.h"
 
 using namespace std;
@@ -12,8 +10,9 @@ class Waiter : public Employee {
 
    public:
     Waiter(istream &in);
-    void calcSalary(double profit);
+
     void print(ostream &out) const override;
+    void calcSalary(double profit);
 
     int getEmpWorkExp() { return empWorkExp; }
     void setEmpWorkExp(int _work_exp) { empWorkExp = _work_exp; }
@@ -25,12 +24,15 @@ Waiter::Waiter(istream &in) : Employee(in) {
 
     cout << "Waiter's work experience (in years): ";
     in >> empWorkExp;
-    cout << endl;
-}
 
-void Waiter::calcSalary(double profit) { empSalary += profit; }
+    cout << "*New waiter created*\n\n";
+}
 
 void Waiter::print(ostream &out) const {
     Employee::print(out);
-    out << "Work Experience: " << empWorkExp << " year(s)" << endl << endl;
+    out << "Employee Class: Chef\n"
+        << "Salary: " << empSalary << " GEL\n"
+        << "Work Experience: " << empWorkExp << " year(s)\n\n";
 }
+
+void Waiter::calcSalary(double profit) { empSalary += profit; }

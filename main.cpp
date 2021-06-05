@@ -28,40 +28,28 @@ int main() {
     empList.push_back(emp);
 
     /* ...and using 'cin' */
-    emp = new Chef(ifs);
+    emp = new Chef(cin);
     empList.push_back(emp);
 
-    emp = new Chef(ifs);
+    emp = new Waiter(cin);
     empList.push_back(emp);
 
-    emp = new Waiter(ifs);
+    emp = new Waiter(cin);
     empList.push_back(emp);
 
-    emp = new Waiter(ifs);
-    empList.push_back(emp);
-
-    /* Printing out starting details about employees */
+    /* Printing out employee details to console and file after monthly profit */
     ofstream ofs("output.txt");
     list<Employee *>::iterator it;
-    cout << "<<< RESTAURANT EMPLOYEES >>>\n\n";
-    ofs << "<<< RESTAURANT EMPLOYEES >>>\n\n";
-    for (it = empList.begin(); it != empList.end(); it++) {
-        emp = *it;
-        emp->print(cout);
-        emp->print(ofs);
-    }
 
-    /* Printing out details to file and console after monthly profit */
+    cout << "MONTH 1\n";
+    ofs << "MONTH 1\n";
+    cout << "-------\n";
+    ofs << "-------\n";
 
-    /* <<< MONTH 1 >>> */
-    for (it = empList.begin(); it != empList.end(); it++) {
-        emp = *it;
-        emp->print(ofs);
-    }
-    ofs << "--------------------------------\n\n";
+    /* Entering profit and tips */
+    double profit;
 
     cout << "Enter restaurant profit: ";
-    double profit;
     cin >> profit;
     for (it = empList.begin(); it != empList.end(); it++) {
         emp = *it;
@@ -76,9 +64,66 @@ int main() {
     }
     cout << endl;
 
+    /* Printing out */
     for (it = empList.begin(); it != empList.end(); it++) {
         emp = *it;
+        emp->print(ofs);
         emp->print(cout);
     }
-    cout << "--------------------------------\n\n";
+
+    cout << "MONTH 2\n";
+    ofs << "MONTH 2\n";
+    cout << "-------\n";
+    ofs << "-------\n";
+
+    /* Entering profit and tips */
+    cout << "Enter restaurant profit: ";
+    cin >> profit;
+    for (it = empList.begin(); it != empList.end(); it++) {
+        emp = *it;
+        if (emp->getEmpClass() == 'W') {
+            cout << "Enter tip for " << emp->getEmpName() << ": ";
+            double tip;
+            cin >> tip;
+            emp->calcSalary(tip);
+        } else {
+            emp->calcSalary(profit);
+        }
+    }
+    cout << endl;
+
+    /* Printing out */
+    for (it = empList.begin(); it != empList.end(); it++) {
+        emp = *it;
+        emp->print(ofs);
+        emp->print(cout);
+    }
+
+    cout << "MONTH 3\n";
+    ofs << "MONTH 3\n";
+    cout << "-------\n";
+    ofs << "-------\n";
+
+    /* Entering profit and tips */
+    cout << "Enter restaurant profit: ";
+    cin >> profit;
+    for (it = empList.begin(); it != empList.end(); it++) {
+        emp = *it;
+        if (emp->getEmpClass() == 'W') {
+            cout << "Enter tip for " << emp->getEmpName() << ": ";
+            double tip;
+            cin >> tip;
+            emp->calcSalary(tip);
+        } else {
+            emp->calcSalary(profit);
+        }
+    }
+    cout << endl;
+
+    /* Printing out */
+    for (it = empList.begin(); it != empList.end(); it++) {
+        emp = *it;
+        emp->print(ofs);
+        emp->print(cout);
+    }
 }

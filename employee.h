@@ -1,7 +1,7 @@
 /* Employee Header File */
 #pragma once
-
 #include <iostream>
+
 using namespace std;
 
 class Employee {
@@ -39,6 +39,6 @@ Employee::Employee(istream &in) {
 }
 
 void Employee::print(ostream &out) const {
-    out << "Name: " << empName << endl
-        << "Employee ID: " << empID << endl;
+    out << "Name: " << empName << "\n"
+        << "Employee ID: " << empID << "\n";
 }

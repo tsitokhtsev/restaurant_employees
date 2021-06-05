@@ -1,8 +1,6 @@
 /* Chef Header File */
 #pragma once
-
 #include <iostream>
-
 #include "employee.h"
 
 using namespace std;
@@ -12,8 +10,9 @@ class Chef : public Employee {
 
    public:
     Chef(istream &in);
-    void calcSalary(double profit);
+
     void print(ostream &out) const override;
+    void calcSalary(double profit);
 
     string getEmpCookExp() { return empCookExp; }
     void setEmpCookExp(string _cook_exp) { empCookExp = _cook_exp; }
@@ -25,12 +24,15 @@ Chef::Chef(istream &in) : Employee(in) {
 
     cout << "Chef's cooking experience: ";
     in >> empCookExp;
-    cout << endl;
-}
 
-void Chef::calcSalary(double profit) { empSalary += profit * 0.2; }
+    cout << "*New chef created*\n\n";
+}
 
 void Chef::print(ostream &out) const {
     Employee::print(out);
-    out << "Cooking Experience: " << empCookExp << endl << endl;
+    out << "Employee Class: Chef\n"
+        << "Salary: " << empSalary << " GEL\n"
+        << "Cooking Experience: " << empCookExp << "\n\n";
 }
+
+void Chef::calcSalary(double profit) { empSalary += profit * 0.2; }
