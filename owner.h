@@ -1,16 +1,13 @@
 /* Owner Header File */
 #pragma once
-#include <iostream>
 #include "employee.h"
-
-using namespace std;
 
 class Owner : public Employee {
    public:
     Owner(istream &in);
 
     void print(ostream &out) const override;
-    void calcSalary(double profit);
+    void calcSalary(const double budget, const double profit);
 };
 
 Owner::Owner(istream &in) : Employee(in) {
@@ -22,8 +19,24 @@ Owner::Owner(istream &in) : Employee(in) {
 
 void Owner::print(ostream &out) const {
     Employee::print(out);
-    out << "Employee Class: Owner\n"
-        << "Salary: " << empSalary << " GEL\n\n";
+
+    if (moneyGained < 0) {
+        out << " - " << -moneyGained << " GEL (loss)";
+    } else {
+        out << " + " << moneyGained << " GEL";
+        if (moneyGained > 0) out << " (profit)";
+    }
+    
+    out << " = " << empSalary + moneyGained << " GEL\n\n";
 }
 
-void Owner::calcSalary(double profit) { empSalary += profit * 0.6; }
+void Owner::calcSalary(const double budget, const double profit) {
+    if (budget <= SALARY_BUDGET) {
+        moneyGained =
+            ceil((budget * empSalary / SALARY_BUDGET - empSalary) * 100) / 100;
+    } else if (profit <= 0) {
+        moneyGained = 0;
+    } else {
+        moneyGained = profit * 0.6;
+    }
+}

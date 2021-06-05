@@ -1,18 +1,16 @@
 /* Waiter Header File */
 #pragma once
-#include <iostream>
 #include "employee.h"
 
-using namespace std;
-
 class Waiter : public Employee {
+    double empTip = 0;
     int empWorkExp;
 
    public:
     Waiter(istream &in);
 
     void print(ostream &out) const override;
-    void calcSalary(double profit);
+    void calcSalary(const double budget, const double profit);
 
     int getEmpWorkExp() { return empWorkExp; }
     void setEmpWorkExp(int _work_exp) { empWorkExp = _work_exp; }
@@ -30,9 +28,21 @@ Waiter::Waiter(istream &in) : Employee(in) {
 
 void Waiter::print(ostream &out) const {
     Employee::print(out);
-    out << "Employee Class: Chef\n"
-        << "Salary: " << empSalary << " GEL\n"
+
+    if (moneyGained < 0) {
+        out << " - " << -moneyGained << " GEL (loss)";
+    }
+
+    out << " + " << empTip << " GEL (tip) = " << empSalary + moneyGained + empTip << " GEL\n"
         << "Work Experience: " << empWorkExp << " year(s)\n\n";
 }
 
-void Waiter::calcSalary(double profit) { empSalary += profit; }
+void Waiter::calcSalary(const double budget, const double profit) {
+    cout << "Enter tip for " << empName << ": ";
+    cin >> empTip;
+
+    if (budget <= SALARY_BUDGET) {
+        moneyGained =
+            ceil((budget * empSalary / SALARY_BUDGET - empSalary) * 100) / 100;
+    }
+}
