@@ -28,23 +28,18 @@ Chef::Chef(istream &in) : Employee(in) {
 void Chef::print(ostream &out) const {
     Employee::print(out);
 
-    if (moneyGained < 0) {
-        out << " - " << -moneyGained << " GEL (loss)";
-    } else {
-        out << " + " << moneyGained << " GEL";
-        if (moneyGained > 0) out << " (profit)";
-    }
-    
-    out << " = " << empSalary + moneyGained << " GEL\n"
-        << "Cooking Experience: " << empCookExp << "\n\n";
+    if (moneyGained > 0) {
+        out << " + " << moneyGained
+            << " GEL (profit) = " << empSalary + moneyGained << " GEL\n";
+    } else
+        out << "\n";
+
+    out << "Cooking Experience: " << empCookExp << "\n\n";
 }
 
 void Chef::calcSalary(const double budget, const double profit) {
-    if (budget <= SALARY_BUDGET) {
-        moneyGained =
-            ceil((budget * empSalary / SALARY_BUDGET - empSalary) * 100) / 100;
-    } else if (profit <= 0) {
-        moneyGained = 0;
+    if (budget < SALARY_BUDGET || profit < 0) {
+        Employee::calcSalary(budget, profit);
     } else {
         moneyGained = profit * 0.2;
     }

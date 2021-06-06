@@ -61,7 +61,12 @@ int main() {
         /* Entering profit and tips */
         cout << "Enter restaurant profit: ";
         cin >> profit;
+
         budget += profit;
+        if (budget > emp->getSalaryBudget()) {
+            profit = budget - emp->getSalaryBudget();
+            budget = emp->getSalaryBudget();
+        }
 
         /* If budget gets less then zero, restaurant goes bankrupt */
         if (budget <= 0) {
