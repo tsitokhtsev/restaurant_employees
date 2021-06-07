@@ -1,5 +1,6 @@
 /* Waiter Header File */
 #pragma once
+
 #include "employee.h"
 
 class Waiter : public Employee {
@@ -12,7 +13,12 @@ class Waiter : public Employee {
     void print(ostream &out) const override;
     void calcSalary(const double budget, const double profit) override;
 
+    /* Getter */
+    double getEmpTip() { return empTip; }
     int getEmpWorkExp() { return empWorkExp; }
+
+    /* Setters */
+    void setEmpTip(double _tip) { empTip = _tip; }
     void setEmpWorkExp(int _work_exp) { empWorkExp = _work_exp; }
 };
 

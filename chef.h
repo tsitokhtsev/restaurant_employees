@@ -1,5 +1,6 @@
 /* Chef Header File */
 #pragma once
+
 #include "employee.h"
 
 class Chef : public Employee {
@@ -11,6 +12,7 @@ class Chef : public Employee {
     void print(ostream &out) const override;
     void calcSalary(const double budget, const double profit);
 
+    /* Getter and setter */
     string getEmpCookExp() { return empCookExp; }
     void setEmpCookExp(string _cook_exp) { empCookExp = _cook_exp; }
 };

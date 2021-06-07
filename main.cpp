@@ -58,7 +58,7 @@ int main() {
         cout << "-------\n";
         ofs << "-------\n";
 
-        /* Entering profit and tips */
+        /* Entering profit */
         cout << "Enter restaurant profit: ";
         cin >> profit;
 

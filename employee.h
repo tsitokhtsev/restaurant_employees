@@ -14,7 +14,7 @@ class Employee {
     int empID;
     char empClass;
     double empSalary;
-    double moneyGained = 0;
+    double moneyGained;
 
    public:
     Employee(istream &in);
@@ -71,7 +71,6 @@ void Employee::print(ostream &out) const {
 
     if (moneyGained < 0) {
         out << " - " << -moneyGained << " GEL (loss)";
-
         if (empClass != 'W') out << " = " << empSalary + moneyGained << " GEL";
     }
 }
