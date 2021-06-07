@@ -7,15 +7,15 @@ class Waiter : public Employee {
     double empTip = 0;
     int empWorkExp;
 
-   public:
+  public:
     Waiter(istream &in);
 
     void print(ostream &out) const override;
     void calcSalary(const double budget, const double profit) override;
 
     /* Getter */
-    double getEmpTip() { return empTip; }
-    int getEmpWorkExp() { return empWorkExp; }
+    double getEmpTip() const { return empTip; }
+    int getEmpWorkExp() const { return empWorkExp; }
 
     /* Setters */
     void setEmpTip(double _tip) { empTip = _tip; }
@@ -35,23 +35,18 @@ Waiter::Waiter(istream &in) : Employee(in) {
 void Waiter::print(ostream &out) const {
     Employee::print(out);
 
-    if (empTip > 0) out << " + " << empTip << " GEL (tip)";
+    if (moneyGained != 0 || empTip > 0) {
+		out << " + " << empTip << " GEL (tip)"
+			<< " = " << empSalary + moneyGained + empTip << " GEL\n";
+    } else out << "\n";
 
-    if (moneyGained != 0 || empTip != 0) {
-        out << " = " << empSalary + moneyGained + empTip << " GEL\n"
-            << "Work Experience: " << empWorkExp << " year(s)\n\n";
-    } else {
-        out << "\n\n";
-    }
+    out << "Work Experience: " << empWorkExp << " year(s)\n\n";
 }
 
 void Waiter::calcSalary(const double budget, const double profit) {
     cout << "Enter tip for " << empName << ": ";
     cin >> empTip;
 
-    if (budget < SALARY_BUDGET || profit < 0) {
-        Employee::calcSalary(budget, profit);
-    } else {
-        moneyGained = 0;
-    }
+    if (budget < SALARY_BUDGET || profit < 0) Employee::calcSalary(budget, profit);
+    else moneyGained = 0;
 }

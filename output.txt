@@ -1,0 +1,154 @@
+RESTAURANT STAFF
+----------------
+Name: Elene
+Employee ID: 1
+Employee Class: Owner
+Salary: 5000 GEL
+
+Name: Merab
+Employee ID: 2
+Employee Class: Chef
+Salary: 3000 GEL
+Cooking Experience: Indian
+
+Name: Anna
+Employee ID: 3
+Employee Class: Waiter
+Salary: 1000 GEL
+Work Experience: 2 year(s)
+
+Name: Niko
+Employee ID: 4
+Employee Class: Chef
+Salary: 3000 GEL
+Cooking Experience: Chinese
+
+Name: Aleko
+Employee ID: 5
+Employee Class: Waiter
+Salary: 1000 GEL
+Work Experience: 1 year(s)
+
+Name: Nia
+Employee ID: 6
+Employee Class: Waiter
+Salary: 1000 GEL
+Work Experience: 4 year(s)
+
+MONTH 1
+-------
+BUDGET: 14000
+
+Name: Elene
+Employee ID: 1
+Employee Class: Owner
+Salary: 5000 GEL + 600 GEL (profit) = 5600 GEL
+
+Name: Merab
+Employee ID: 2
+Employee Class: Chef
+Salary: 3000 GEL + 200 GEL (profit) = 3200 GEL
+Cooking Experience: Indian
+
+Name: Anna
+Employee ID: 3
+Employee Class: Waiter
+Salary: 1000 GEL + 300 GEL (tip) = 1300 GEL
+Work Experience: 2 year(s)
+
+Name: Niko
+Employee ID: 4
+Employee Class: Chef
+Salary: 3000 GEL + 200 GEL (profit) = 3200 GEL
+Cooking Experience: Chinese
+
+Name: Aleko
+Employee ID: 5
+Employee Class: Waiter
+Salary: 1000 GEL + 600 GEL (tip) = 1600 GEL
+Work Experience: 1 year(s)
+
+Name: Nia
+Employee ID: 6
+Employee Class: Waiter
+Salary: 1000 GEL + 1200 GEL (tip) = 2200 GEL
+Work Experience: 4 year(s)
+
+MONTH 2
+-------
+BUDGET: 11000
+
+Name: Elene
+Employee ID: 1
+Employee Class: Owner
+Salary: 5000 GEL - 1071.42 GEL (loss) = 3928.58 GEL
+
+Name: Merab
+Employee ID: 2
+Employee Class: Chef
+Salary: 3000 GEL - 642.85 GEL (loss) = 2357.15 GEL
+Cooking Experience: Indian
+
+Name: Anna
+Employee ID: 3
+Employee Class: Waiter
+Salary: 1000 GEL - 214.28 GEL (loss) + 200 GEL (tip) = 985.72 GEL
+Work Experience: 2 year(s)
+
+Name: Niko
+Employee ID: 4
+Employee Class: Chef
+Salary: 3000 GEL - 642.85 GEL (loss) = 2357.15 GEL
+Cooking Experience: Chinese
+
+Name: Aleko
+Employee ID: 5
+Employee Class: Waiter
+Salary: 1000 GEL - 214.28 GEL (loss) + 250 GEL (tip) = 1035.72 GEL
+Work Experience: 1 year(s)
+
+Name: Nia
+Employee ID: 6
+Employee Class: Waiter
+Salary: 1000 GEL - 214.28 GEL (loss) + 300 GEL (tip) = 1085.72 GEL
+Work Experience: 4 year(s)
+
+MONTH 3
+-------
+BUDGET: 14000
+
+Name: Elene
+Employee ID: 1
+Employee Class: Owner
+Salary: 5000 GEL + 3000 GEL (profit) = 8000 GEL
+
+Name: Merab
+Employee ID: 2
+Employee Class: Chef
+Salary: 3000 GEL + 1000 GEL (profit) = 4000 GEL
+Cooking Experience: Indian
+
+Name: Anna
+Employee ID: 3
+Employee Class: Waiter
+Salary: 1000 GEL + 600 GEL (tip) = 1600 GEL
+Work Experience: 2 year(s)
+
+Name: Niko
+Employee ID: 4
+Employee Class: Chef
+Salary: 3000 GEL + 1000 GEL (profit) = 4000 GEL
+Cooking Experience: Chinese
+
+Name: Aleko
+Employee ID: 5
+Employee Class: Waiter
+Salary: 1000 GEL + 400 GEL (tip) = 1400 GEL
+Work Experience: 1 year(s)
+
+Name: Nia
+Employee ID: 6
+Employee Class: Waiter
+Salary: 1000 GEL + 200 GEL (tip) = 1200 GEL
+Work Experience: 4 year(s)
+

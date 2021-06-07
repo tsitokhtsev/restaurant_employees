@@ -7,16 +7,16 @@
 using namespace std;
 
 class Employee {
-   protected:
+  protected:
     const double SALARY_BUDGET = 14000;
 
     string empName;
     int empID;
     char empClass;
     double empSalary;
-    double moneyGained;
+    double moneyGained = 0;
 
-   public:
+  public:
     Employee(istream &in);
 
     virtual void print(ostream &out) const;
@@ -76,6 +76,5 @@ void Employee::print(ostream &out) const {
 }
 
 void Employee::calcSalary(const double budget, const double profit) {
-    moneyGained =
-        ceil((budget * empSalary / SALARY_BUDGET - empSalary) * 100) / 100;
+    moneyGained = ceil((budget * empSalary / SALARY_BUDGET - empSalary) * 100) / 100;
 }

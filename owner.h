@@ -4,7 +4,7 @@
 #include "employee.h"
 
 class Owner : public Employee {
-   public:
+  public:
     Owner(istream &in);
 
     void print(ostream &out) const override;
@@ -22,16 +22,12 @@ void Owner::print(ostream &out) const {
     Employee::print(out);
 
     if (moneyGained > 0) {
-        out << " + " << moneyGained
-            << " GEL (profit) = " << empSalary + moneyGained << " GEL\n\n";
-    } else
-        out << "\n\n";
+        out << " + " << moneyGained << " GEL (profit) = "
+        	<< empSalary + moneyGained << " GEL\n\n";
+    } else out << "\n\n";
 }
 
 void Owner::calcSalary(const double budget, const double profit) {
-    if (budget < SALARY_BUDGET || profit < 0) {
-        Employee::calcSalary(budget, profit);
-    } else {
-        moneyGained = profit * 0.6;
-    }
+    if (budget < SALARY_BUDGET || profit < 0) Employee::calcSalary(budget, profit);
+    else moneyGained = profit * 0.6;
 }
